@@ -1,7 +1,7 @@
 'use strict';
 
 const TASK_COUNT = 3;
-const DEFAULT_RENDER_QUANTITY = 1;
+const DEFAULT_RENDER_COUNT = 1;
 
 const createMenuTemplate = () => {
   return (
@@ -370,8 +370,8 @@ const createLoadMoreButtonTemplate = () => {
   );
 };
 
-const renderComponent = (container, template, place = `beforeend`, quantity = DEFAULT_RENDER_QUANTITY) => {
-  for (let i = 0; i < quantity; i++) {
+const renderComponent = (container, template, place = `beforeend`, count = DEFAULT_RENDER_COUNT) => {
+  for (let i = 0; i < count; i++) {
     container.insertAdjacentHTML(place, template);
   }
 };
