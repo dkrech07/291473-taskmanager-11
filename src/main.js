@@ -52,8 +52,3 @@ loadMoreButton.addEventListener(`click`, () => {
     loadMoreButton.remove();
   }
 });
-
-// renderComponent(taskListElement, createTaskTemplate(), `beforeend`, TASK_COUNT);
-
-// console.log(generateTasks()[0].description);
-console.log(generateTasks(TASK_COUNT));
