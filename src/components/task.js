@@ -1,6 +1,6 @@
 import AbstractComponent from "./abstract-component.js";
 import {MONTHS} from "../const.js";
-import {formatTime} from "../utils.js";
+import {formatTime} from "../utils/common.js";
 
 export const createTaskTemplate = (task) => {
   const {description, dueDate, color, repeatingDays, isArchive, isFavorite} = task;
