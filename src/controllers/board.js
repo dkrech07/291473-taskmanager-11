@@ -6,7 +6,6 @@ import TaskEditComponent from "../components/task-edit.js";
 import TasksComponent from "../components/tasks.js";
 import {render, remove, replace, RENDER_POSITION} from "../utils/render.js";
 
-
 const SHOWING_TASKS_COUNT_ON_START = 8;
 const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
 
@@ -44,7 +43,6 @@ const renderTask = (taskListElement, task) => {
 
   render(taskListElement, taskComponent, RENDER_POSITION.BEFOREEND);
 };
-
 
 export default class BoardController {
   constructor(container) {
