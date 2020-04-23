@@ -1,6 +1,6 @@
 import LoadMoreButtonComponent from "../components/load-more-button.js";
 import NoTasksComponent from "../components/no-tasks.js";
-import SortComponent, {SORT_TYPE} from "../components/sort.js";
+import SortComponent, {SortType} from "../components/sort.js";
 import TaskComponent from "../components/task.js";
 import TaskEditComponent from "../components/task-edit.js";
 import TasksComponent from "../components/tasks.js";
@@ -50,19 +50,18 @@ const renderTasks = (taskListElement, tasks) => {
   });
 };
 
-
 const getSortedTasks = (tasks, sortType, from, to) => {
   let sortedTasks = [];
   const showingTasks = tasks.slice();
 
   switch (sortType) {
-    case SORT_TYPE.DATE_UP:
+    case SortType.DATE_UP:
       sortedTasks = showingTasks.sort((a, b) => a.dueDate - b.dueDate);
       break;
-    case SORT_TYPE.DATE_DOWN:
+    case SortType.DATE_DOWN:
       sortedTasks = showingTasks.sort((a, b) => b.dueDate - a.dueDate);
       break;
-    case SORT_TYPE.DEFAULT:
+    case SortType.DEFAULT:
       sortedTasks = showingTasks;
       break;
   }
