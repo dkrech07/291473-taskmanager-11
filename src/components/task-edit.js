@@ -16,13 +16,11 @@ const createColorsMarkup = (colors, currentColor) => {
           class="card__color-input card__color-input--${color} visually-hidden"
           name="color"
           value="${color}"
-          ${currentColor === color ? `checked` : ``}
-        />
+          ${currentColor === color ? `checked` : ``}/>
         <label
           for="color-${color}--${index}"
-          class="card__color card__color--${color}"
-          >${color}</label
-        >`
+          class="card__color card__color--${color}">
+          ${color}</label>`
       );
     })
     .join(`\n`);

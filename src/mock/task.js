@@ -16,7 +16,6 @@ const DEFAULT_REPEATING_DAYS = {
   "su": false,
 };
 
-
 const getRandomArrayItem = (array) => {
   const randomIndex = getRandomIntegerNumber(0, array.length);
 

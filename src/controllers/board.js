@@ -3,8 +3,7 @@ import NoTasksComponent from "../components/no-tasks.js";
 import SortComponent, {SortType} from "../components/sort.js";
 import TaskController from "./task.js";
 import TasksComponent from "../components/tasks.js";
-import {render, remove, RENDER_POSITION} from "../utils/render.js";
-
+import {render, remove, RenderPosition} from "../utils/render.js";
 
 const SHOWING_TASKS_COUNT_ON_START = 8;
 const SHOWING_TASKS_COUNT_BY_BUTTON = 8;
@@ -38,11 +37,9 @@ const getSortedTasks = (tasks, sortType, from, to) => {
   return sortedTasks.slice(from, to);
 };
 
-
 export default class BoardController {
   constructor(container) {
     this._container = container;
-
     this._tasks = [];
     this._showedTaskControllers = [];
     this._showingTasksCount = SHOWING_TASKS_COUNT_ON_START;
@@ -63,12 +60,12 @@ export default class BoardController {
     const isAllTasksArchived = this._tasks.every((task) => task.isArchive);
 
     if (isAllTasksArchived) {
-      render(container, this._noTasksComponent, RENDER_POSITION.BEFOREEND);
+      render(container, this._noTasksComponent, RenderPosition.BEFOREEND);
       return;
     }
 
-    render(container, this._sortComponent, RENDER_POSITION.BEFOREEND);
-    render(container, this._tasksComponent, RENDER_POSITION.BEFOREEND);
+    render(container, this._sortComponent, RenderPosition.BEFOREEND);
+    render(container, this._tasksComponent, RenderPosition.BEFOREEND);
 
     const taskListElement = this._tasksComponent.getElement();
 
@@ -84,7 +81,7 @@ export default class BoardController {
     }
 
     const container = this._container.getElement();
-    render(container, this._loadMoreButtonComponent, RENDER_POSITION.BEFOREEND);
+    render(container, this._loadMoreButtonComponent, RenderPosition.BEFOREEND);
 
     this._loadMoreButtonComponent.setClickHandler(() => {
       const prevTasksCount = this._showingTasksCount;

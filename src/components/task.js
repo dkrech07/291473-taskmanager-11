@@ -6,8 +6,7 @@ const createButtonMarkup = (name, isActive = true) => {
   return (
     `<button
       type="button"
-      class="card__btn card__btn--${name} ${isActive ? `` : `card__btn--disabled`}"
-    >
+      class="card__btn card__btn--${name} ${isActive ? `` : `card__btn--disabled`}">
       ${name}
     </button>`
   );
@@ -28,7 +27,6 @@ export const createTaskTemplate = (task) => {
 
   const repeatClass = Object.values(repeatingDays).some(Boolean) ? `card--repeat` : ``;
   const deadlineClass = isExpired ? `card--deadline` : ``;
-
 
   return (
     `<article class="card card--${color} ${repeatClass} ${deadlineClass}">
